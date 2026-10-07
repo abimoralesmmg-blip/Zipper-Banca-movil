@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.client.ClientMainController">
+   <children>
+      <ImageView fitHeight="640.0" fitWidth="404.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 1.3; -fx-translate-x: 40;">
+         <image>
+            <Image url="@../img/fondo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="136.0" fitWidth="266.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 2.8; -fx-scale-y: 1.5; -fx-translate-x: 126;">
+         <image>
+            <Image url="@../img/rectangulo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="136.0" fitWidth="283.0" layoutX="-11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 3.4; -fx-scale-y: 6; -fx-translate-x: 94;" AnchorPane.leftAnchor="-11.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="350.0">
+         <image>
+            <Image url="@../img/rectangulo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="136.0" fitWidth="266.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 3.2; -fx-scale-y: 1.5; -fx-translate-x: 70;" AnchorPane.topAnchor="110.0">
+         <image>
+            <Image url="@../img/rectangulo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblNombre" text="Hola, nombre" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="50.0">
+         <font>
+            <Font name="Georgia Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCuenta" layoutX="39.0" layoutY="153.0" text="Cuenta: ">
+         <font>
+            <Font name="Georgia Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSaldota" layoutX="195.0" layoutY="170.0" text="Saldo: $">
+         <font>
+            <Font name="Georgia Bold" size="17.0" />
+         </font>
+      </Label>
+	      <TableView fx:id="tblHistorial" layoutX="37.0" layoutY="303.0" prefHeight="200.0" prefWidth="283.0">
+	  <columns>
+	    <TableColumn fx:id="colBeneficiario" prefWidth="132.0" text="Nombre Beneficiario" />
+	    <TableColumn fx:id="colFecha" prefWidth="75.0" text="Fecha" />
+	    <TableColumn fx:id="colMonto" prefWidth="75.0" text="Monto" />
+	  </columns>
+	</TableView>
+
+      <!-- Botón para mostrar/ocultar menú lateral -->
+      <Button fx:id="btnMenu" layoutX="13.0" layoutY="22.0" mnemonicParsing="false" style="-fx-background-color: transparent;"
+              onAction="#onMenuToggle">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/menu.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="44.0" layoutY="256.0" text="Historial de transferencia:" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Text>
+      <VBox fx:id="menuLateral" layoutY="80.0" prefHeight="200.0" prefWidth="150.0" spacing="15.0"
+            style="-fx-background-color: #FFFFFF; -fx-border-color: #000000; -fx-border-radius: 5;" visible="false">
+         <children>
+            <Button fx:id="btnTransferencia" mnemonicParsing="false" prefHeight="41.0" prefWidth="153.0"
+                    style="-fx-background-color: #5F9EA0; -fx-background-radius: 10; -fx-border-color: #7FFFD4; -fx-border-radius: 10;"
+                    text="Transferencia" onAction="#onTransferencia">
+               <font>
+                  <Font name="Georgia Bold Italic" size="16.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets>
+            </Button>
+            <Button disable="true" mnemonicParsing="false" prefHeight="32.0" prefWidth="152.0" text="Pago Servicio">
+               <font>
+                  <Font name="Georgia Bold Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button disable="true" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" text="Tarjeta Crédito">
+               <font>
+                  <Font name="Georgia Bold Italic" size="15.0" />
+               </font>
+            </Button>
+            <Button disable="true" mnemonicParsing="false" prefHeight="29.0" prefWidth="154.0" text="Servicio Cliente">
+               <font>
+                  <Font name="Georgia Bold Italic" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <!-- Botón de salir -->
+      <Button fx:id="btnSalida" layoutX="277.0" layoutY="593.0" mnemonicParsing="false"
+              style="-fx-background-color: #008B8B; -fx-border-color: #000000; -fx-border-radius: 10; -fx-background-radius: 10;"
+              text="Salir" onAction="#onSalir">
+         <font>
+            <Font name="Georgia Bold" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.admin.AdminMainController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- TOP: buscador y menú -->
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <TextField fx:id="txtSearch" promptText="Buscar usuario"
+                           onKeyReleased="#onSearchKeyReleased"/>
+                <MenuButton fx:id="menuOptions" text="Opciones">
+                    <items>
+                        <MenuItem text="Estadísticas" onAction="#onOpenStats"/>
+                        <MenuItem text="Cerrar sesión" onAction="#onLogout"/>
+                    </items>
+                </MenuButton>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- CENTER: tabla de usuarios -->
+    <center>
+        <TableView fx:id="tvUsers">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Nombre"/>
+                <TableColumn fx:id="colApellido" text="Apellido"/>
+                <TableColumn fx:id="colCorreo" text="Correo"/>
+                <TableColumn fx:id="colCedula" text="Cédula"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- BOTTOM: botones -->
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Button fx:id="btnCrearUsuario" text="+ Crear Usuario" onAction="#onCreateUser"/>
+                <Button fx:id="btnEliminarUsuario" text="- Eliminar Usuario" onAction="#onDeleteUser"/>
+                <Button fx:id="btnVerDetalles" text="Ver Detalles" onAction="#onViewUser"/>
+                <Button fx:id="btnRefresh" text="Refrescar" onAction="#onRefresh"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

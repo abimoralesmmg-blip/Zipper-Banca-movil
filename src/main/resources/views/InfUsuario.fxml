@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.admin.UserDetailController"
+            prefWidth="800.0" prefHeight="520.0">
+
+  <!-- TOP: título -->
+  <top>
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+      <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+      </padding>
+      <Label text="Detalles del Usuario">
+        <font>
+          <Font size="18.0"/>
+        </font>
+      </Label>
+    </HBox>
+  </top>
+
+  <!-- CENTER: info del usuario (izq) + historial (der) -->
+  <center>
+    <HBox spacing="20.0" alignment="TOP_LEFT">
+      <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+      </padding>
+
+      <!-- Datos del usuario -->
+      <VBox spacing="8.0" prefWidth="280.0">
+        <GridPane hgap="8.0" vgap="8.0">
+          <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+          <Label fx:id="lblNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+          <Label text="Apellido:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+          <Label fx:id="lblApellido" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+          <Label text="Cédula:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+          <Label fx:id="lblCedula" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+          <Label text="Correo:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+          <Label fx:id="lblCorreo" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+          <Label text="Número de cuenta:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+          <Label fx:id="lblCuenta" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10.0" alignment="CENTER">
+          <padding>
+            <Insets top="12.0"/>
+          </padding>
+          <Button fx:id="btnExportUserPdf" text="Exportar PDF" onAction="#onExportUserPdf" prefWidth="120.0"/>
+          <Button fx:id="btnExportUserExcel" text="Exportar Excel" onAction="#onExportUserExcel" prefWidth="120.0"/>
+        </HBox>
+      </VBox>
+
+      <!-- Historial de transacciones -->
+      <VBox spacing="8.0" prefWidth="480.0">
+        <Label text="Historial de transacciones:"/>
+        <TableView fx:id="tvTransactions" prefHeight="360.0" prefWidth="480.0">
+          <columns>
+            <TableColumn fx:id="colTxnFecha" text="Fecha" prefWidth="140.0"/>
+            <TableColumn fx:id="colTxnTipo" text="Tipo" prefWidth="120.0"/>
+            <TableColumn fx:id="colTxnBeneficiario" text="Beneficiario" prefWidth="120.0"/>
+            <TableColumn fx:id="colTxnMonto" text="Monto" prefWidth="100.0"/>
+            <TableColumn fx:id="colTxnEstado" text="Estado" prefWidth="100.0"/>
+          </columns>
+        </TableView>
+      </VBox>
+    </HBox>
+  </center>
+
+  <!-- BOTTOM: cerrar -->
+  <bottom>
+    <HBox spacing="10.0" alignment="CENTER_RIGHT">
+      <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+      </padding>
+      <Button fx:id="btnClose" text="Cerrar" onAction="#onClose" prefWidth="100.0"/>
+    </HBox>
+  </bottom>
+</BorderPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="360.0" style="-fx-background-color: #FFFFFF;"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.client.RegistroController">
+   <children>
+      <ImageView fitHeight="651.0" fitWidth="367.0" layoutX="53.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: -55; -fx-translate-y: -110;">
+         <image>
+            <Image url="@../img/fondoRegistro.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="351.0" fitWidth="602.0" layoutX="-86.0" layoutY="-111.0" pickOnBounds="true" preserveRatio="true" style="-fx-scale-x: 1.2; -fx-scale-y: 0.6; -fx-translate-x: -54; -fx-translate-y: -20;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="-111.0">
+         <image>
+            <Image url="@../img/rectangulo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="84.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: -5;">
+         <image>
+            <Image url="@../img/registro.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="172.0" layoutY="25.0" style="-fx-translate-x: -60; -fx-translate-y: -10;" text="Registro de Usuario" textFill="#171717" AnchorPane.rightAnchor="-30.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="Georgia Bold" size="20.0" />
+         </font>
+      </Label>
+      <VBox layoutX="60.0" layoutY="200.0" prefHeight="359.0" prefWidth="244.0" spacing="30.0" style="-fx-translate-y: -50;" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <TextField fx:id="txtNombre" promptText="Nombre" />
+            <TextField fx:id="txtApellido" promptText="Apellido" />
+            <TextField fx:id="txtCedula" promptText="Cédula" />
+            <TextField fx:id="txtEmail" promptText="Correo electrónico" />
+            <PasswordField fx:id="txtContrasena" promptText="Contraseña" />
+            <PasswordField fx:id="txtConfirmacionContrsena" promptText="Confirmación de Contraseña" />
+         </children>
+      </VBox>
+      <Button fx:id="btnRegistrar" layoutX="150.0" layoutY="540.0" mnemonicParsing="false" onAction="#onRegistrar" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: #F0FFFF; -fx-text-fill: Black; -fx-font-weight: bold; -fx-translate-x: -90; -fx-translate-y: -40; -fx-border-radius: 10; -fx-background-radius: 10;" text="Registrar" />
+      <Hyperlink fx:id="linkLogin" layoutY="-16.0" onAction="#goToLogin" prefHeight="45.0" prefWidth="307.0" style="-fx-translate-y: 580; -fx-translate-x: 30;" text="¿Ya tienes una Cuenta? Inicia Sesión" textFill="#fffdfd">
+         <font>
+            <Font name="Georgia Italic" size="18.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

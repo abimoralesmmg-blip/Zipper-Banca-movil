@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.client.TransferenciaController">
+
+   <children>
+      <!-- Fondo -->
+      <ImageView fitHeight="900.0" fitWidth="800.0" layoutX="100.0" layoutY="-250.0"
+                 pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../img/fondo.jpg" />
+         </image>
+      </ImageView>
+
+      <!-- Panel central -->
+      <ImageView fitHeight="450.0" fitWidth="800.0" layoutX="-30.0" layoutY="-45.0"
+                 pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/rectangulo.png" />
+         </image>
+      </ImageView>
+
+      <!-- Formulario -->
+      <VBox alignment="CENTER" layoutX="170.0" layoutY="100.0"
+            prefHeight="200.0" prefWidth="260.0" spacing="20.0">
+         <children>
+            <Label text="Número de cuenta destino:">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCuentaDestino" promptText="N. Cuenta" />
+
+            <Label text="Monto a transferir:">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtMonto" promptText="Monto $" />
+
+            <HBox alignment="CENTER" spacing="40.0">
+               <children>
+                  <Button fx:id="btnTransferir" text="Transferir" onAction="#onTransferir" />
+                  <Button fx:id="btnCancelar" text="Cancelar" onAction="#onCancelar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Botón Volver -->
+      <Button fx:id="btnVolver" layoutX="20.0" layoutY="20.0"
+              style="-fx-background-color: transparent;" onAction="#onVolver">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Volver.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+
+      <!-- Logo -->
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="480.0" layoutY="10.0"
+                 pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
